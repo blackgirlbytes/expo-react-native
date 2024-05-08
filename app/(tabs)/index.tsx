@@ -5,7 +5,28 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-export default function HomeScreen() {
+import "@tbd54566975/web5-react-native-polyfills";
+
+import { Web5IdentityAgent } from "@web5/identity-agent";
+import {
+  AgentDidApi,
+  AgentSyncApi,
+  HdIdentityVault,
+  SyncEngineLevel,
+  AgentDwnApi,
+  DwnDidStore,
+} from "@web5/agent";
+import {
+  MessageStoreLevel,
+  DataStoreLevel,
+  EventLogLevel,
+} from "@tbd54566975/dwn-sdk-js";
+import { getTechPreviewDwnEndpoints, Web5 } from "@web5/api";
+import { DidDht, DidJwk, DidResolverCacheLevel } from "@web5/dids";
+import { ReactNativeLevelDBAsync } from "@shamilovtim/react-native-leveldb-async";
+import { LevelStore } from "@web5/common";
+
+export default async function HomeScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -16,7 +37,7 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title">Hellllooooo</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
